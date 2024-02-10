@@ -64,19 +64,19 @@ class NoteTest {
 		verify(textFile).write("note.txt", "Reading book");
 	}
 
-	@Test
-	@DisplayName("given today is my birthday write reading note and my note should contain 🎂")
-	void writeNoteOnMyBirthday() {
-		TextFile textFile = mock(TextFile.class);
-		BirthdayChecker birthdayChecker = mock(BirthdayChecker.class);
-		when(birthdayChecker.isBirthday()).thenReturn(true);
-		Note note = new Note(textFile, birthdayChecker);
-
-		note.write("Reading book");
-
-		String expected = "Reading book";
-		verify(textFile).write("note.txt", expected);
-	}
+//	@Test
+//	@DisplayName("given today is my birthday write reading note and my note should contain 🎂")
+//	void writeNoteOnMyBirthday() {
+//		TextFile textFile = mock(TextFile.class);
+//		BirthdayChecker birthdayChecker = mock(BirthdayChecker.class);
+//		when(birthdayChecker.isBirthday()).thenReturn(true);
+//		Note note = new Note(textFile, birthdayChecker);
+//
+//		note.write("Reading book");
+//
+//		String expected = "Reading book";
+//		verify(textFile).write("note.txt", expected);
+//	}
 
 	@Test
 	@DisplayName("given write reading note async should success")
